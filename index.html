@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>QualificaHub | Plataforma de Cursos Gratuitos</title>
+
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/layout.css" />
+    <link rel="stylesheet" href="assets/css/components.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+  </head>
+
+  <body>
+    <div id="header"></div>
+
+    <main class="container">
+      <section class="hero">
+        <h1>Encontre cursos gratuitos para impulsionar sua carreira</h1>
+
+        <p>
+          O QualificaHub centraliza cursos gratuitos disponíveis na internet
+          para facilitar o acesso à qualificação profissional.
+        </p>
+
+        <input type="text" id="searchInput" placeholder="Buscar cursos..." />
+      </section>
+
+      <section>
+        <h2>Cursos em destaque</h2>
+
+        <div id="coursesContainer" class="courses-grid"></div>
+      </section>
+    </main>
+
+    <div id="footer"></div>
+
+    <script src="./assets/data/courses.js"></script>
+    <script src="./assets/js/courses.js"></script>
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/search.js"></script>
+  </body>
+</html>
