@@ -1,7 +1,27 @@
+.hero {
+  text-align: center;
+  padding: 64px 0 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-content {
+  max-width: 700px;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--color-primary);
+}
+
 .logo {
   display: flex;
   align-items: center;
   text-decoration: none;
+  transition: opacity var(--transition-fast);
 }
 
 .logo:hover {
@@ -9,127 +29,121 @@
 }
 
 .logo-img {
-  height: 72px;
+  height: 105px;
   width: auto;
   display: block;
+  object-fit: contain;
 }
 
-.hero {
-  text-align: center;
-  margin-bottom: 40px;
+.hero p {
+  font-size: 1.125rem;
+  margin-bottom: 32px;
+  color: var(--text-body);
 }
 
-input,
-select,
-textarea {
-  padding: 10px;
-  margin: 10px 0;
-  width: 100%;
+.search-bar {
+  display: flex;
+  gap: 8px;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
-button {
-  padding: 10px 20px;
-  background: #1e3a8a;
+.search-bar input {
+  flex: 1;
+  padding: 14px 20px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.search-bar input:focus {
+  outline: none;
+  border-color: var(--color-action);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+.search-bar button {
+  padding: 14px 28px;
+  background-color: var(--color-action);
   color: white;
   border: none;
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  font-weight: 600;
   cursor: pointer;
+  transition: background-color var(--transition-fast);
 }
 
-.filters {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 16px;
-  margin-bottom: 32px;
+.search-bar button:hover {
+  background-color: var(--color-action-hover);
 }
 
-.filters select,
-.filters input {
-  margin: 0;
+.featured-section {
+  padding: 40px 0 60px;
+}
+
+.featured-section h2 {
+  font-size: 1.75rem;
+  margin-bottom: 24px;
 }
 
 .courses-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
 }
 
 .course-card {
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  background: var(--color-surface);
+  padding: 24px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  display: flex;
+  flex-direction: column;
+}
+
+.course-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}
+
+.course-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 8px;
+}
+
+.course-card p {
+  color: var(--text-body);
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+  flex-grow: 1;
 }
 
 .course-card a {
   display: inline-block;
-  margin-top: 10px;
-  color: #1e3a8a;
-  font-weight: bold;
-}
-
-.contact-wrapper {
-  display: flex;
-  justify-content: center;
-  margin-top: 40px;
-}
-
-.contact-form {
-  width: 100%;
-  max-width: 520px;
-  background: #ffffff;
-  padding: 32px;
-  border-radius: 10px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-}
-
-.contact-form h2 {
-  margin-bottom: 20px;
-  color: #123c5e;
-}
-
-.contact-form label {
-  display: block;
-  margin-bottom: 6px;
-  font-weight: 500;
-  color: #374151;
-}
-
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #d1d5db;
-  border-radius: 6px;
-  font-size: 14px;
-  transition: border 0.2s ease, box-shadow 0.2s ease;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-  outline: none;
-  border-color: #123c5e;
-  box-shadow: 0 0 0 2px rgba(18, 60, 94, 0.15);
-}
-
-.contact-form textarea {
-  resize: vertical;
-  min-height: 120px;
-}
-
-.contact-form button {
-  margin-top: 16px;
-  width: 100%;
-  padding: 12px;
-  background: #123c5e;
-  color: #ffffff;
-  border: none;
-  border-radius: 6px;
-  font-size: 15px;
+  text-decoration: none;
+  color: var(--color-action);
   font-weight: 600;
-  cursor: pointer;
-  transition: background 0.2s ease;
+  align-self: flex-start;
+  transition: color var(--transition-fast);
 }
 
-.contact-form button:hover {
-  background: #0e2f47;
+.course-card a:hover {
+  color: var(--color-action-hover);
+  text-decoration: underline;
+}
+
+.category-badge {
+  display: inline-block;
+  background: #e2e8f0;
+  color: #475569;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 12px;
 }

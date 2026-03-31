@@ -1,11 +1,26 @@
 @media (max-width: 768px) {
-  .logo-img {
-    height: 50px;
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .search-bar {
+    flex-direction: column;
+  }
+
+  .search-bar button {
+    width: 100%;
   }
 
   .nav-menu {
     flex-direction: column;
-    gap: 12px;
+    gap: 16px;
     align-items: flex-start;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .courses-grid {
+    grid-template-columns: 1fr;
   }
 }

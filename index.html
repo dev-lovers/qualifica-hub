@@ -1,44 +1,56 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>QualificaHub | Plataforma de Cursos Gratuitos</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="QualificaHub - Encontre cursos gratuitos no seu bairro para impulsionar sua carreira profissional." />
 
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <link rel="stylesheet" href="assets/css/layout.css" />
-    <link rel="stylesheet" href="assets/css/components.css" />
-    <link rel="stylesheet" href="assets/css/responsive.css" />
-  </head>
+  <title>QualificaHub | Plataforma de Cursos Gratuitos</title>
 
-  <body>
-    <div id="header"></div>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <main class="container">
-      <section class="hero">
-        <h1>Encontre cursos gratuitos para impulsionar sua carreira</h1>
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="assets/css/layout.css" />
+  <link rel="stylesheet" href="assets/css/components.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" />
+</head>
 
+<body>
+  <header id="header" class="header"></header>
+
+  <main class="container">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-content">
+        <h1 id="hero-title">Impulsione sua carreira com cursos gratuitos</h1>
         <p>
           O QualificaHub centraliza cursos gratuitos disponíveis na internet
-          para facilitar o acesso à qualificação profissional.
+          para facilitar o acesso à qualificação profissional. Desenvolva novas habilidades hoje mesmo!
         </p>
 
-        <input type="text" id="searchInput" placeholder="Buscar cursos..." />
-      </section>
+        <form class="search-bar" onsubmit="event.preventDefault();" role="search">
+          <input type="search" id="searchInput" placeholder="Ex: Inglês, Excel, HTML..." aria-label="Buscar cursos" />
+          <button type="submit" aria-label="Pesquisar">Buscar</button>
+        </form>
+      </div>
+    </section>
 
-      <section>
-        <h2>Cursos em destaque</h2>
+    <section class="featured-section" aria-labelledby="featured-title">
+      <h2 id="featured-title">Cursos em destaque</h2>
+      <div id="coursesContainer" class="courses-grid">
+      </div>
+    </section>
+  </main>
 
-        <div id="coursesContainer" class="courses-grid"></div>
-      </section>
-    </main>
+  <footer id="footer" class="footer"></footer>
 
-    <div id="footer"></div>
+  <script src="./assets/data/courses.js"></script>
+  <script src="./assets/js/courses.js"></script>
+  <script src="./assets/js/main.js"></script>
+  <script src="./assets/js/search.js"></script>
+</body>
 
-    <script src="./assets/data/courses.js"></script>
-    <script src="./assets/js/courses.js"></script>
-    <script src="./assets/js/main.js"></script>
-    <script src="./assets/js/search.js"></script>
-  </body>
 </html>

@@ -1,41 +1,37 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Contato | QualificaHub</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Encontre cursos gratuitos para impulsionar sua carreira profissional." />
 
-    <link rel="stylesheet" href="../assets/css/main.css" />
-    <link rel="stylesheet" href="../assets/css/layout.css" />
-    <link rel="stylesheet" href="../assets/css/components.css" />
-    <link rel="stylesheet" href="../assets/css/responsive.css" />
-  </head>
+  <title>Contato | QualificaHub</title>
 
-  <body>
-    <div id="header"></div>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <main class="container">
-      <div class="contact-wrapper">
-        <form class="contact-form">
-          <h2>Entre em Contato</h2>
+  <link rel="stylesheet" href="../assets/css/main.css" />
+  <link rel="stylesheet" href="../assets/css/layout.css" />
+  <link rel="stylesheet" href="../assets/css/components.css" />
+  <link rel="stylesheet" href="../assets/css/responsive.css" />
+</head>
 
-          <label for="name">Nome</label>
-          <input type="text" id="name" name="name" required />
+<body>
+  <header id="header" class="header"></header>
 
-          <label for="email">E-mail</label>
-          <input type="email" id="email" name="email" required />
+  <main class="container">
+    <section class="contact-wrapper" aria-labelledby="contact-title">
+      <form class="contact-form" onsubmit="event.preventDefault(); alert('Mensagem enviada com sucesso!');">
+        <h2 id="contact-title">Entre em Contato</h2>
+      </form>
+    </section>
+  </main>
 
-          <label for="message">Mensagem</label>
-          <textarea id="message" name="message" required></textarea>
+  <footer id="footer" class="footer"></footer>
 
-          <button type="submit">Enviar Mensagem</button>
-        </form>
-      </div>
-    </main>
+  <script src="../assets/js/main.js"></script>
+</body>
 
-    <div id="footer"></div>
-
-    <script src="../assets/js/main.js"></script>
-  </body>
 </html>

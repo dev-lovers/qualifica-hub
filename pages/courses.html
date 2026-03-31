@@ -1,44 +1,44 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Cursos | QualificaHub</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Encontre cursos gratuitos para impulsionar sua carreira profissional." />
 
-    <link rel="stylesheet" href="../assets/css/main.css" />
-    <link rel="stylesheet" href="../assets/css/layout.css" />
-    <link rel="stylesheet" href="../assets/css/components.css" />
-    <link rel="stylesheet" href="../assets/css/responsive.css" />
-  </head>
+  <title>Cursos | QualificaHub</title>
 
-  <body>
-    <div id="header"></div>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <main class="container">
-      <h1>Catálogo de Cursos</h1>
+  <link rel="stylesheet" href="../assets/css/main.css" />
+  <link rel="stylesheet" href="../assets/css/layout.css" />
+  <link rel="stylesheet" href="../assets/css/components.css" />
+  <link rel="stylesheet" href="../assets/css/responsive.css" />
+</head>
 
-      <div class="filters">
-        <select id="categoryFilter">
-          <option value="">Todas categorias</option>
-          <option value="Tecnologia">Tecnologia</option>
-          <option value="Administração">Administração</option>
-          <option value="Idiomas">Idiomas</option>
-          <option value="Empreendedorismo">Empreendedorismo</option>
-        </select>
+<body>
+  <header id="header" class="header"></header>
 
-        <input type="text" id="searchInput" placeholder="Buscar curso..." />
-      </div>
+  <main class="container">
+    <h1>Catálogo de Cursos</h1>
 
+    <section class="filters" aria-label="Filtros de busca">
+    </section>
+
+    <section aria-label="Lista de cursos encontrados">
       <div id="coursesContainer" class="courses-grid"></div>
-    </main>
+    </section>
+  </main>
 
-    <div id="footer"></div>
+  <footer id="footer" class="footer"></footer>
 
-    <script src="../assets/data/courses.js"></script>
-    <script src="../assets/js/main.js"></script>
-    <script src="../assets/js/courses.js"></script>
-    <script src="../assets/js/filters.js"></script>
-    <script src="../assets/js/search.js"></script>
-  </body>
+  <script src="../assets/data/courses.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/courses.js"></script>
+  <script src="../assets/js/filters.js"></script>
+  <script src="../assets/js/search.js"></script>
+</body>
+
 </html>
