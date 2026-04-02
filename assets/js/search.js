@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!input) return;
 
   input.addEventListener("keyup", () => {
-    const term = input.value.toLowerCase();
+    const term = input.value.toLowerCase().trim();
 
     const results = courses.filter((course) =>
       course.name.toLowerCase().includes(term)

@@ -1,9 +1,13 @@
-<div class="course-card">
+<article class="course-card">
   <h3>{{nome}}</h3>
 
-  <p class="platform">{{plataforma}}</p>
+  <div class="course-details">
+    <span class="category-badge">{{categoria}}</span>
+    <p class="platform"><strong>Plataforma:</strong> {{plataforma}}</p>
+    <p class="workload"><strong>Carga Horária:</strong> {{cargaHoraria}}</p>
+  </div>
 
-  <p class="workload">{{cargaHoraria}}</p>
-
-  <a href="{{link}}" target="_blank">Acessar curso</a>
-</div>
+  <a href="{{link}}" target="_blank" rel="noopener noreferrer" aria-label="Acessar o curso {{nome}} na plataforma {{plataforma}}">
+    Acessar curso
+  </a>
+</article>
