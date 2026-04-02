@@ -1,37 +1,139 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Entre em contato com o QualificaHub — envie sugestões, dúvidas ou feedbacks sobre a plataforma."
+    />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Encontre cursos gratuitos para impulsionar sua carreira profissional." />
+    <title>Contato | QualificaHub</title>
 
-  <title>Contato | QualificaHub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="stylesheet" href="/assets/css/layout.css" />
+    <link rel="stylesheet" href="/assets/css/components.css" />
+    <link rel="stylesheet" href="/assets/css/responsive.css" />
+  </head>
 
-  <link rel="stylesheet" href="../assets/css/main.css" />
-  <link rel="stylesheet" href="../assets/css/layout.css" />
-  <link rel="stylesheet" href="../assets/css/components.css" />
-  <link rel="stylesheet" href="../assets/css/responsive.css" />
-</head>
+  <body>
+    <header id="header" class="header"></header>
 
-<body>
-  <header id="header" class="header"></header>
+    <main>
+      <div class="container">
+        <section class="contact-section" aria-labelledby="contact-title">
+          <h1 id="contact-title">Entre em Contato</h1>
+          <p class="subtitle">
+            Tem sugestões de cursos, dúvidas ou feedback? Fale conosco.
+          </p>
 
-  <main class="container">
-    <section class="contact-wrapper" aria-labelledby="contact-title">
-      <form class="contact-form" onsubmit="event.preventDefault(); alert('Mensagem enviada com sucesso!');">
-        <h2 id="contact-title">Entre em Contato</h2>
-      </form>
-    </section>
-  </main>
+          <form id="contactForm" class="contact-form" novalidate>
+            <div class="form-group">
+              <label for="contactName"
+                >Nome completo <span aria-hidden="true">*</span></label
+              >
+              <input
+                type="text"
+                id="contactName"
+                name="name"
+                placeholder="Seu nome"
+                required
+                autocomplete="name"
+              />
+            </div>
 
-  <footer id="footer" class="footer"></footer>
+            <div class="form-group">
+              <label for="contactEmail"
+                >E-mail <span aria-hidden="true">*</span></label
+              >
+              <input
+                type="email"
+                id="contactEmail"
+                name="email"
+                placeholder="seu@email.com"
+                required
+                autocomplete="email"
+              />
+            </div>
 
-  <script src="../assets/js/main.js"></script>
-</body>
+            <div class="form-group">
+              <label for="contactSubject"
+                >Assunto <span aria-hidden="true">*</span></label
+              >
+              <select id="contactSubject" name="subject" required>
+                <option value="">Selecione um assunto</option>
+                <option value="sugestao">Sugestão de curso</option>
+                <option value="duvida">Dúvida sobre a plataforma</option>
+                <option value="feedback">Feedback geral</option>
+                <option value="outro">Outro</option>
+              </select>
+            </div>
 
+            <div class="form-group">
+              <label for="contactMessage"
+                >Mensagem <span aria-hidden="true">*</span></label
+              >
+              <textarea
+                id="contactMessage"
+                name="message"
+                placeholder="Escreva sua mensagem aqui…"
+                required
+                minlength="20"
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit">Enviar mensagem</button>
+
+            <p
+              id="formSuccess"
+              class="form-success"
+              role="status"
+              aria-live="polite"
+            >
+              ✅ Mensagem enviada com sucesso! Agradecemos seu contato.
+            </p>
+          </form>
+        </section>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer"></footer>
+
+    <script>
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const name = document.getElementById("contactName").value.trim();
+          const email = document.getElementById("contactEmail").value.trim();
+          const subject = document.getElementById("contactSubject").value;
+          const message = document
+            .getElementById("contactMessage")
+            .value.trim();
+
+          if (!name || !email || !subject || message.length < 20) {
+            alert(
+              "Preencha todos os campos. A mensagem deve ter ao menos 20 caracteres."
+            );
+            return;
+          }
+
+          this.reset();
+
+          const success = document.getElementById("formSuccess");
+          success.classList.add("visible");
+          setTimeout(() => success.classList.remove("visible"), 6000);
+        });
+    </script>
+
+    <script src="/assets/js/main.js"></script>
+  </body>
 </html>
