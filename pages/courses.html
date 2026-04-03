@@ -1,44 +1,76 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Catálogo de cursos gratuitos do QualificaHub. Filtre por categoria e encontre o curso ideal para você."
+    />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Encontre cursos gratuitos para impulsionar sua carreira profissional." />
+    <title>Cursos | QualificaHub</title>
 
-  <title>Cursos | QualificaHub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="stylesheet" href="/assets/css/layout.css" />
+    <link rel="stylesheet" href="/assets/css/components.css" />
+    <link rel="stylesheet" href="/assets/css/responsive.css" />
+  </head>
 
-  <link rel="stylesheet" href="../assets/css/main.css" />
-  <link rel="stylesheet" href="../assets/css/layout.css" />
-  <link rel="stylesheet" href="../assets/css/components.css" />
-  <link rel="stylesheet" href="../assets/css/responsive.css" />
-</head>
+  <body>
+    <header id="header" class="header"></header>
 
-<body>
-  <header id="header" class="header"></header>
+    <main>
+      <div class="container">
+        <div class="page-title">
+          <h1>Catálogo de Cursos</h1>
+          <p>Encontre cursos gratuitos por nome ou filtre por categoria.</p>
+        </div>
 
-  <main class="container">
-    <h1>Catálogo de Cursos</h1>
+        <section class="filters" aria-label="Filtros de busca">
+          <label for="searchInput" class="sr-only">Buscar curso por nome</label>
+          <input
+            type="search"
+            id="searchInput"
+            class="search-input"
+            placeholder="Buscar por nome do curso…"
+            autocomplete="off"
+          />
 
-    <section class="filters" aria-label="Filtros de busca">
-    </section>
+          <label for="categoryFilter" class="sr-only"
+            >Filtrar por categoria</label
+          >
+          <select id="categoryFilter" aria-label="Filtrar por categoria">
+            <option value="">Todas as categorias</option>
+            <option value="Tecnologia">Tecnologia</option>
+            <option value="Administração">Administração</option>
+            <option value="Idiomas">Idiomas</option>
+            <option value="Empreendedorismo">Empreendedorismo</option>
+            <option value="Informática">Informática</option>
+          </select>
+        </section>
 
-    <section aria-label="Lista de cursos encontrados">
-      <div id="coursesContainer" class="courses-grid"></div>
-    </section>
-  </main>
+        <section aria-label="Resultados de cursos">
+          <div
+            id="coursesContainer"
+            class="courses-grid"
+            role="list"
+            aria-live="polite"
+          ></div>
+        </section>
+      </div>
+    </main>
 
-  <footer id="footer" class="footer"></footer>
+    <footer id="footer" class="footer"></footer>
 
-  <script src="../assets/data/courses.js"></script>
-  <script src="../assets/js/main.js"></script>
-  <script src="../assets/js/courses.js"></script>
-  <script src="../assets/js/filters.js"></script>
-  <script src="../assets/js/search.js"></script>
-</body>
-
+    <script src="/assets/js/data.js"></script>
+    <script src="/assets/js/courses.js"></script>
+    <script src="/assets/js/main.js"></script>
+  </body>
 </html>

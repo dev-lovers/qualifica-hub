@@ -1,56 +1,79 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="QualificaHub — Plataforma gratuita que centraliza cursos online para qualificação profissional e inclusão educacional."
+    />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description"
-    content="QualificaHub - Encontre cursos gratuitos no seu bairro para impulsionar sua carreira profissional." />
+    <title>QualificaHub | Plataforma de Cursos Gratuitos</title>
 
-  <title>QualificaHub | Plataforma de Cursos Gratuitos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="stylesheet" href="/assets/css/layout.css" />
+    <link rel="stylesheet" href="/assets/css/components.css" />
+    <link rel="stylesheet" href="/assets/css/responsive.css" />
+  </head>
 
-  <link rel="stylesheet" href="assets/css/main.css" />
-  <link rel="stylesheet" href="assets/css/layout.css" />
-  <link rel="stylesheet" href="assets/css/components.css" />
-  <link rel="stylesheet" href="assets/css/responsive.css" />
-</head>
+  <body>
+    <header id="header" class="header"></header>
 
-<body>
-  <header id="header" class="header"></header>
+    <main>
+      <div class="container">
+        <section class="hero" aria-labelledby="hero-title">
+          <div class="hero-content">
+            <h1 id="hero-title">
+              Impulsione sua carreira com cursos gratuitos
+            </h1>
+            <p>
+              O QualificaHub centraliza cursos gratuitos disponíveis na internet
+              para facilitar o acesso à qualificação profissional. Desenvolva
+              novas habilidades hoje mesmo!
+            </p>
 
-  <main class="container">
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-content">
-        <h1 id="hero-title">Impulsione sua carreira com cursos gratuitos</h1>
-        <p>
-          O QualificaHub centraliza cursos gratuitos disponíveis na internet
-          para facilitar o acesso à qualificação profissional. Desenvolva novas habilidades hoje mesmo!
-        </p>
+            <form
+              class="search-bar"
+              role="search"
+              onsubmit="event.preventDefault()"
+            >
+              <label for="searchInput" class="sr-only"
+                >Buscar cursos por nome</label
+              >
+              <input
+                type="search"
+                id="searchInput"
+                placeholder="Ex: Inglês, Excel, HTML…"
+                autocomplete="off"
+              />
+              <button type="submit">Buscar</button>
+            </form>
+          </div>
+        </section>
 
-        <form class="search-bar" onsubmit="event.preventDefault();" role="search">
-          <input type="search" id="searchInput" placeholder="Ex: Inglês, Excel, HTML..." aria-label="Buscar cursos" />
-          <button type="submit" aria-label="Pesquisar">Buscar</button>
-        </form>
+        <section class="featured-section" aria-labelledby="featured-title">
+          <h2 id="featured-title">Cursos em destaque</h2>
+          <div
+            id="coursesContainer"
+            class="courses-grid"
+            role="list"
+            aria-live="polite"
+          ></div>
+        </section>
       </div>
-    </section>
+    </main>
 
-    <section class="featured-section" aria-labelledby="featured-title">
-      <h2 id="featured-title">Cursos em destaque</h2>
-      <div id="coursesContainer" class="courses-grid">
-      </div>
-    </section>
-  </main>
+    <footer id="footer" class="footer"></footer>
 
-  <footer id="footer" class="footer"></footer>
-
-  <script src="./assets/data/courses.js"></script>
-  <script src="./assets/js/courses.js"></script>
-  <script src="./assets/js/main.js"></script>
-  <script src="./assets/js/search.js"></script>
-</body>
-
+    <script src="/assets/js/data.js"></script>
+    <script src="/assets/js/courses.js"></script>
+    <script src="/assets/js/main.js"></script>
+  </body>
 </html>

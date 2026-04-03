@@ -1,78 +1,69 @@
+/* ============================================================
+   components.css — Componentes reutilizáveis
+   ============================================================ */
+
+/* ---------- Hero ---------- */
 .hero {
   text-align: center;
-  padding: 64px 0 48px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  padding: 72px 0 56px;
 }
 
 .hero-content {
-  max-width: 700px;
+  max-width: 680px;
+  margin: 0 auto;
 }
 
 .hero h1 {
   font-size: 2.5rem;
   font-weight: 700;
-  margin-bottom: 16px;
   color: var(--color-primary);
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  transition: opacity var(--transition-fast);
-}
-
-.logo:hover {
-  opacity: 0.85;
-}
-
-.logo-img {
-  height: 105px;
-  width: auto;
-  display: block;
-  object-fit: contain;
+  margin-bottom: 16px;
 }
 
 .hero p {
   font-size: 1.125rem;
-  margin-bottom: 32px;
   color: var(--text-body);
+  margin-bottom: 36px;
 }
 
+/* ---------- Barra de busca ---------- */
 .search-bar {
   display: flex;
   gap: 8px;
-  max-width: 600px;
+  max-width: 580px;
   margin: 0 auto;
 }
 
-.search-bar input {
+.search-bar input[type="search"] {
   flex: 1;
   padding: 14px 20px;
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
   font-size: 1rem;
   font-family: inherit;
-  transition: border var(--transition-fast), box-shadow var(--transition-fast);
+  background: var(--color-surface);
+  color: var(--text-dark);
+  transition: border-color var(--transition-fast),
+    box-shadow var(--transition-fast);
 }
 
-.search-bar input:focus {
+.search-bar input[type="search"]:focus {
   outline: none;
   border-color: var(--color-action);
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.18);
 }
 
 .search-bar button {
   padding: 14px 28px;
   background-color: var(--color-action);
-  color: white;
+  color: #ffffff;
   border: none;
   border-radius: var(--radius-md);
   font-size: 1rem;
   font-weight: 600;
+  font-family: inherit;
   cursor: pointer;
+  white-space: nowrap;
   transition: background-color var(--transition-fast);
 }
 
@@ -80,30 +71,110 @@
   background-color: var(--color-action-hover);
 }
 
-.featured-section {
-  padding: 40px 0 60px;
+/* ---------- Seção de destaques / listagem ---------- */
+.section-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
-.featured-section h2 {
+.section-header h2 {
+  font-size: 1.75rem;
+  margin: 0;
+}
+
+.featured-section {
+  padding: 48px 0 72px;
+}
+
+.featured-section > h2 {
   font-size: 1.75rem;
   margin-bottom: 24px;
 }
 
+/* ---------- Filtros (página Cursos) ---------- */
+.filters {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+  padding: 20px 24px;
+  background: var(--color-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+}
+
+.filters label {
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: var(--text-dark);
+  white-space: nowrap;
+}
+
+.filters .search-input {
+  flex: 1;
+  min-width: 180px;
+  padding: 10px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-size: 0.95rem;
+  font-family: inherit;
+  background: var(--color-background);
+  color: var(--text-dark);
+  transition: border-color var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.filters .search-input:focus {
+  outline: none;
+  border-color: var(--color-action);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.18);
+}
+
+.filters select {
+  padding: 10px 36px 10px 14px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-size: 0.95rem;
+  font-family: inherit;
+  background: var(--color-background);
+  color: var(--text-dark);
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23475569' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  cursor: pointer;
+  transition: border-color var(--transition-fast);
+}
+
+.filters select:focus {
+  outline: none;
+  border-color: var(--color-action);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.18);
+}
+
+/* ---------- Grade de cursos ---------- */
 .courses-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 24px;
 }
 
+/* ---------- Card de curso ---------- */
 .course-card {
   background: var(--color-surface);
   padding: 24px;
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-color);
   box-shadow: var(--shadow-sm);
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
   display: flex;
   flex-direction: column;
+  transition: transform var(--transition-fast),
+    box-shadow var(--transition-fast);
 }
 
 .course-card:hover {
@@ -112,38 +183,318 @@
 }
 
 .course-card h3 {
-  font-size: 1.25rem;
-  margin-bottom: 8px;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
 }
 
-.course-card p {
-  color: var(--text-body);
-  font-size: 0.95rem;
+.course-details {
+  flex: 1;
   margin-bottom: 20px;
-  flex-grow: 1;
+}
+
+.course-details p {
+  font-size: 0.9rem;
+  color: var(--text-body);
+  margin-bottom: 4px;
 }
 
 .course-card a {
   display: inline-block;
+  padding: 8px 20px;
+  background-color: var(--color-action);
+  color: #ffffff;
   text-decoration: none;
-  color: var(--color-action);
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
   font-weight: 600;
   align-self: flex-start;
-  transition: color var(--transition-fast);
+  transition: background-color var(--transition-fast);
 }
 
 .course-card a:hover {
-  color: var(--color-action-hover);
-  text-decoration: underline;
+  background-color: var(--color-action-hover);
 }
 
+/* Badge de categoria */
 .category-badge {
   display: inline-block;
-  background: #e2e8f0;
-  color: #475569;
-  padding: 4px 8px;
-  border-radius: 4px;
-  font-size: 0.8rem;
+  background: #eff6ff;
+  color: var(--color-action);
+  border: 1px solid #bfdbfe;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
   font-weight: 600;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* Estado vazio */
+.empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 48px 24px;
+  color: var(--text-light);
+  font-size: 1rem;
+}
+
+/* ---------- Trilhas de aprendizagem ---------- */
+.trails-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));
+  gap: 28px;
+  padding-bottom: 72px;
+}
+
+.trail-card {
+  background: var(--color-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.trail-header {
+  padding: 24px 24px 16px;
+  border-bottom: 1px solid var(--border-color);
+  background: #f0f7ff;
+}
+
+.trail-header h2 {
+  font-size: 1.2rem;
+  margin-bottom: 6px;
+  color: var(--color-primary);
+}
+
+.trail-description {
+  font-size: 0.9rem;
+  color: var(--text-body);
+  margin: 0;
+}
+
+.trail-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: trail-counter;
+}
+
+.trail-list li {
+  counter-increment: trail-counter;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.trail-list li:last-child {
+  border-bottom: none;
+}
+
+.trail-course {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 24px;
+}
+
+.trail-course::before {
+  content: counter(trail-counter);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  background: var(--color-action);
+  color: #ffffff;
+  border-radius: 50%;
+  font-size: 0.75rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.trail-course-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.trail-course-name {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+.trail-course-meta {
+  font-size: 0.8rem;
+  color: var(--text-light);
+}
+
+.trail-course a {
+  padding: 6px 16px;
+  background-color: transparent;
+  color: var(--color-action);
+  border: 1px solid var(--color-action);
+  border-radius: var(--radius-md);
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.trail-course a:hover {
+  background-color: var(--color-action);
+  color: #ffffff;
+}
+
+.trail-empty {
+  padding: 20px 24px;
+  font-size: 0.9rem;
+  color: var(--text-light);
+  margin: 0;
+}
+
+/* ---------- Sobre ---------- */
+.about-section {
+  max-width: 720px;
+  padding: 56px 0 80px;
+}
+
+.about-section h1 {
+  font-size: 2rem;
+  color: var(--color-primary);
+  margin-bottom: 24px;
+}
+
+.about-section p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+.ods-highlight {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: var(--radius-md);
+  padding: 12px 20px;
+  font-size: 0.95rem;
+  color: var(--color-primary);
+  font-weight: 500;
+  margin-top: 8px;
+}
+
+/* ---------- Contato ---------- */
+.contact-section {
+  padding: 56px 0 80px;
+  max-width: 600px;
+}
+
+.contact-section h1 {
+  font-size: 2rem;
+  color: var(--color-primary);
+  margin-bottom: 8px;
+}
+
+.contact-section .subtitle {
+  color: var(--text-body);
+  margin-bottom: 40px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  padding: 12px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  font-family: inherit;
+  color: var(--text-dark);
+  background: var(--color-surface);
+  transition: border-color var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--color-action);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.18);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+.btn-submit {
+  align-self: flex-start;
+  padding: 14px 36px;
+  background-color: var(--color-action);
+  color: #ffffff;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.btn-submit:hover {
+  background-color: var(--color-action-hover);
+}
+
+.form-success {
+  display: none;
+  padding: 16px 20px;
+  background: #f0fdf4;
+  border: 1px solid #86efac;
+  border-radius: var(--radius-md);
+  color: #166534;
+  font-weight: 500;
+}
+
+.form-success.visible {
+  display: block;
+}
+
+/* ---------- Page title header ---------- */
+.page-title {
+  padding: 40px 0 32px;
+}
+
+.page-title h1 {
+  font-size: 2rem;
+  color: var(--color-primary);
+  margin-bottom: 8px;
+}
+
+.page-title p {
+  color: var(--text-body);
+  font-size: 1rem;
+  margin: 0;
 }
