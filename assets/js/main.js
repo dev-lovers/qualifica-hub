@@ -2,13 +2,17 @@
  * main.js
  * Carrega os componentes de header e footer via fetch e marca o link
  * ativo na navegação com base na URL atual.
+ *
+ * Correção GitHub Pages: base path calculado via pathname para suportar
+ * subdiretórios (ex: /qualifica-hub/) sem quebrar o ambiente local.
  */
 
-async function loadComponent(elementId, filePath) {
+async function loadComponent(elementId, filePath, base) {
   try {
     const response = await fetch(filePath);
     if (!response.ok) throw new Error(`HTTP ${response.status} — ${filePath}`);
-    document.getElementById(elementId).innerHTML = await response.text();
+    const html = (await response.text()).replaceAll("{{BASE}}", base);
+    document.getElementById(elementId).innerHTML = html;
   } catch (error) {
     console.error("Falha ao carregar componente:", error);
   }
@@ -22,7 +26,9 @@ function markActiveNavLink() {
 
     const isHome =
       (linkPath === "/" || linkPath.endsWith("/index.html")) &&
-      (currentPath === "/" || currentPath.endsWith("/index.html"));
+      (currentPath === "/" ||
+        currentPath.endsWith("/index.html") ||
+        currentPath.endsWith("/qualifica-hub/"));
 
     const isActive =
       isHome ||
@@ -36,11 +42,11 @@ function markActiveNavLink() {
 
 document.addEventListener("DOMContentLoaded", async () => {
   const isInPagesFolder = window.location.pathname.includes("/pages/");
-  const base = isInPagesFolder ? "/" : "/";
+  const base = isInPagesFolder ? "../" : "./";
 
   await Promise.all([
-    loadComponent("header", `${base}components/header.html`),
-    loadComponent("footer", `${base}components/footer.html`),
+    loadComponent("header", `${base}components/header.html`, base),
+    loadComponent("footer", `${base}components/footer.html`, base),
   ]);
 
   markActiveNavLink();
