@@ -1,33 +1,143 @@
 const courses = [
   {
+    id: 1,
     name: "Introdução ao HTML",
     category: "Tecnologia",
     platform: "Fundação Bradesco",
     workload: "20h",
     link: "https://www.ev.org.br",
+    trails: ["Programação"],
   },
-
   {
+    id: 2,
+    name: "CSS para Iniciantes",
+    category: "Tecnologia",
+    platform: "Fundação Bradesco",
+    workload: "15h",
+    link: "https://www.ev.org.br",
+    trails: ["Programação"],
+  },
+  {
+    id: 3,
+    name: "Lógica de Programação",
+    category: "Tecnologia",
+    platform: "Curso em Vídeo",
+    workload: "40h",
+    link: "https://www.cursoemvideo.com",
+    trails: ["Programação"],
+  },
+  {
+    id: 4,
+    name: "Python",
+    category: "Tecnologia",
+    platform: "Google Drive",
+    workload: "10h",
+    link: "https://drive.google.com/file/d/14kOvBSVt0COlVI01qTGDTSn8_9TAv-Ff/view",
+    trails: ["Python"],
+  },
+  {
+    id: 5,
     name: "Excel Básico",
     category: "Administração",
     platform: "Fundação Bradesco",
     workload: "30h",
     link: "https://www.ev.org.br",
+    trails: ["Primeiro Emprego"],
   },
-
   {
+    id: 6,
+    name: "Word Intermediário",
+    category: "Administração",
+    platform: "Fundação Bradesco",
+    workload: "20h",
+    link: "https://www.ev.org.br",
+    trails: ["Primeiro Emprego"],
+  },
+  {
+    id: 7,
     name: "Inglês para Iniciantes",
     category: "Idiomas",
     platform: "Coursera",
     workload: "25h",
-    link: "https://coursera.org",
+    link: "https://pt.coursera.org",
+    trails: ["Primeiro Emprego"],
   },
-
   {
+    id: 8,
+    name: "Espanhol Básico",
+    category: "Idiomas",
+    platform: "Duolingo for Schools",
+    workload: "20h",
+    link: "https://schools.duolingo.com",
+    trails: [],
+  },
+  {
+    id: 9,
     name: "Empreendedorismo Digital",
     category: "Empreendedorismo",
     platform: "Sebrae",
     workload: "15h",
     link: "https://sebrae.com.br",
+    trails: ["Empreendedorismo"],
+  },
+  {
+    id: 10,
+    name: "Marketing Digital",
+    category: "Empreendedorismo",
+    platform: "Google Ateliê Digital",
+    workload: "40h",
+    link: "https://learndigital.withgoogle.com/ateliedigital",
+    trails: ["Empreendedorismo"],
+  },
+  {
+    id: 11,
+    name: "Informática Básica",
+    category: "Informática",
+    platform: "Fundação Bradesco",
+    workload: "20h",
+    link: "https://www.ev.org.br",
+    trails: ["Informática Básica"],
+  },
+  {
+    id: 12,
+    name: "Internet e E-mail",
+    category: "Informática",
+    platform: "Fundação Bradesco",
+    workload: "10h",
+    link: "https://www.ev.org.br",
+    trails: ["Informática Básica"],
+  },
+];
+
+const trailsMeta = [
+  {
+    id: "primeiro-emprego",
+    label: "Primeiro Emprego",
+    description:
+      "Habilidades essenciais para quem está entrando no mercado de trabalho pela primeira vez.",
+  },
+  {
+    id: "informatica-basica",
+    label: "Informática Básica",
+    description:
+      "Aprenda a usar o computador e a internet com segurança e eficiência.",
+  },
+  {
+    id: "programacao",
+    label: "Programação",
+    description:
+      "Do zero ao desenvolvimento web: HTML, CSS e lógica de programação.",
+  },
+  {
+    id: "empreendedorismo",
+    label: "Empreendedorismo",
+    description:
+      "Ferramentas digitais e estratégias para abrir e crescer o seu negócio.",
+  },
+  {
+    id: "python",
+    label: "Python",
+    description:
+      "Python do Zero ao Primeiro Script",
   },
 ];
